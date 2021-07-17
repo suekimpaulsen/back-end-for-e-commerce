@@ -12,19 +12,11 @@ Category.init(
       allowNull: false,
       primaryKey: true,
       autoIncrement: true
-    // id:
-      // - Integer / INTEGER
-      // - Doesn't allow null values / false
-      // - Set as primary key / true
-      // - Uses auto increment / true
     },
     // define a category_name column
     category_name: {
       type: DataTypes.STRING,
       allowNull: false
-    // category_name
-      // - String / STRING
-      // - Doesn't allow null values / false
     }
   },
   {
