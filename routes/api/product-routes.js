@@ -9,9 +9,7 @@ router.get('/', (req, res) => {
   Product.findAll({
     // be sure to include its associated Category and Tag data
     include: [
-      {
-        model: Category
-      },
+      Category,
       {
         model: Tag,
         through: ProductTag
@@ -33,9 +31,7 @@ router.get('/:id', (req, res) => {
     },
     // be sure to include its associated Category and Tag data
     include: [
-      {
-        model: Category
-      },
+      Category,
       {
         model: Tag,
         through: ProductTag
@@ -122,7 +118,7 @@ router.put('/:id', (req, res) => {
     })
     .then((updatedProductTags) => res.json(updatedProductTags))
     .catch((err) => {
-      // console.log(err);
+      console.log(err);
       res.status(400).json(err);
     });
 });

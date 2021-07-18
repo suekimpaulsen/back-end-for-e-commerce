@@ -7,11 +7,7 @@ router.get('/', (req, res) => {
   // find all categories
   Category.findAll({
     // be sure to include its associated Products
-    include: [
-      {
-        model: Product
-      }
-    ]
+    include: [Product]
   }).then(dbCategoryData => {
     res.json(dbCategoryData)
   }).catch(err => {
@@ -27,11 +23,7 @@ router.get('/:id', (req, res) => {
       id: req.params.id
     },
     // be sure to include its associated Products
-    include: [
-      {
-        model: Product
-      }
-    ]
+    include: [Product]
   }).then(dbCategoryData => {
     if (!dbCategoryData) {
       res.status(404).json({ message: 'No category found with this id' });
